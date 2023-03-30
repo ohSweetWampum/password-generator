@@ -2,16 +2,16 @@
 
 
 
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
-var specialCharacters = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
+var specialCharactersList = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 var minLength = 8;
 var maxLength = 128;
 var yes = "yes";
 var no = "no";
 var usersCriteriaCharacterArray = [];
-
+var passwordLength = "";
 
 
 
@@ -31,6 +31,7 @@ function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
   if(length >= minLength && length <= maxLength){
     alert("You selected " + length + " characters long.");
+    passwordLength = parseInt(length, 10);
   }else if(length < minLength || length > maxLength){ 
     alert(" Looks like you choose a number outside our range of 8-128 ");
       determineLength();
@@ -46,7 +47,7 @@ function wantLower(){
   var lower = prompt("Do you want lower case letters included in the password?");
   if(lower.toLowerCase() === yes){
     alert("You selected " + lower + " to included lower case.");
-    usersCriteriaCharacterArray = [usersCriteriaCharacterArray.concat()]
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowerCase);
   }else if(lower.toLowerCase() === no){
     alert("You do not want lower case in your password.");
   } else {
@@ -59,7 +60,8 @@ function wantLower(){
 function wantUpper(){
   var upper = prompt("Do you want upper case letters included in the password?");
   if(upper.toLowerCase() === yes){
-    alert("You selected " + upper + " to included lower case.");
+    alert("You selected " + upper + " to included upper case.");
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(upperCase);
   }else if(upper.toLowerCase() === no){
     alert("You do not want upper case in your password.");
   } else {
@@ -72,7 +74,8 @@ function wantUpper(){
 function wantSpecialCharacters(){
   var specialCharacters = prompt("Do you want special characters included in the password?");
   if(specialCharacters.toLowerCase() === yes){
-    alert("You selected " + specialCharacters + " to included lower case.");
+    alert("You selected " + specialCharacters + " to included special characters.");
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(specialCharactersList);
   }else if(specialCharacters.toLowerCase() === no){
     alert("You do not want any special characters in your password.");
   } else {
