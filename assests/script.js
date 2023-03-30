@@ -1,7 +1,4 @@
 
-
-
-
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
@@ -12,20 +9,6 @@ var yes = "yes";
 var no = "no";
 var usersCriteriaCharacterArray = [];
 var passwordLength = "";
-
-
-
-
-// asking user to enter character length between 8-128, they will be returned to function determineLength if they go outsude 8-128 or enter invalid character such as %.
-
-//created this  entireProcess function as the other functions were not getting called, figure I'd just make a function to call the other functions
-// function entireProcess(){
-//   determineLength();
-//   wantLower();
-//   wantSpecialCharacters();
-//   wantUpper();
-// }
-
 
 function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
@@ -84,12 +67,6 @@ function wantSpecialCharacters(){
   }
 }
         
-
-
-
-
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -98,52 +75,26 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 // this section takes into account what the user selected for the criteria and re-makes the arrays
 function generateRandomPassword() {
-  var userSelections = [];
-  if (wantLower() === yes){ 
-    userSelections = userSelections.concat(allCharactersLettersNumbers);
-
-  }
-  if (wantUpper() === yes){ 
-    userSelections = userSelections.concat(allCharactersLettersNumbers);
-
-  }
-  if (wantSpecialCharacters() === yes){ 
-    userSelections = userSelections.concat(allCharactersLettersNumbers);
-
-  }
-
-  var password = "";
-  for(var i = 0; i < length; i++){
-    var randomCharactersGenerator = allCharactersLettersNumbers [Math.floor(Math.random() * allCharactersLettersNumbers.length)];
-    password += randomCharactersGenerator;
-
-  }
-
+ var password = "";
+  for(var i = 0; i < passwordLength; i++){
+    var randomCharactersGenerator = Math.floor(Math.random() * usersCriteriaCharacterArray.length);
+    var selectRandomCharacterFromArray = usersCriteriaCharacterArray[randomCharactersGenerator];
+    password += selectRandomCharacterFromArray;
+    }
   return password;
-
 }
-
-//to store users inputs
-function writePass(){
-  var length = determineLength();
-  var wantLower = wantLower() === "yes";
-  var wantUpper = wantUpper() === "yes";
-  var wantSpecialCharacters = wantSpecialCharacters() === "yes";
+function printOutPassword(){
+determineLength();
+wantLower();
+wantUpper();
+wantSpecialCharacters();
+var password = generateRandomPassword();
+var passwordText = document.querySelector("#password");
+passwordText.value = password;
 }
-
-
-
-
-
-  var passwordText = document.querySelector("#password");
-
-
-  passwordText.value = password;
-  
-};
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", printOutPassword);
 
 
 
