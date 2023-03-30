@@ -25,16 +25,23 @@ var no = "no";
 //Need to creat functions that prompt the user to enter info do things base of input
 
 
-
-// asking user to enter character length between 8-128
+Function entireProcess(){
+// asking user to enter character length between 8-128, they will be returned to function determineLength if they go outsude 8-128 or enter invalid character such as %.
 function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
   if(length >= minLength && length <= maxLength){
     alert("You selected " + length + " characters long.");
-  }else{ alert(" Looks like you choose a number outside our range of 8-128 ");
+  }else if(length < minLength || length > maxLength){ 
+    alert(" Looks like you choose a number outside our range of 8-128 ");
       determineLength();
     }
-  };
+    else {
+      alert("You have entered an invalid option, please enter again." );
+      determineLength();
+    }
+    }
+  
+  
 
 // asking user if they want lower case letters
             
@@ -43,38 +50,52 @@ function wantLower(){
   if(lower.toLowerCase() === yes){
     alert("You selected " + lower + " to included lower case.");
   }else if(lower.toLowerCase() === no){
-    alert("You do not want lower case in your password.")
-  } 
-  
+    alert("You do not want lower case in your password.");
+    //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
+  } else {
+    alert("Invalid option , enter yes or no");
+    wantLower();
+  }
+}
  
   
     
     // asking user if they want upper case letters
-function wantUpper(){
-  var upper = prompt("Do you want upper case letters included in the password?");
-  if(upper){
-    alert("You selected " + length + " characters long.");
-  }else{ alert(" Looks like you chose a number outside our range of 8-128 ");
-      wantUpper();
-    }
+function wantLower(){
+  var lower = prompt("Do you want lower case letters included in the password?");
+  if(lower.toLowerCase() === yes){
+    alert("You selected " + lower + " to included lower case.");
+  }else if(lower.toLowerCase() === no){
+    alert("You do not want lower case in your password.");
+  //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
+  } else if(lower === "" || /(^yes|no)$/i.test(lower)){
+    alert("Invalid, enter yes or no");
+    wantLower();cd
   }
+      
 
 
       // asking user if they want special characters
-function wantSpecial(){
-  var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
-  if(length >= minLength && length <= maxLength){
-    alert("You selected " + length + " characters long.");
-  }else{ alert(" Looks like you chose a number outside our range of 8-128 ");
-      wantSpecial();
-    }
+function wantLower(){
+  var lower = prompt("Do you want lower case letters included in the password?");
+  if(lower.toLowerCase() === yes){
+      alert("You selected " + lower + " to included lower case.");
+  }else if(lower.toLowerCase() === no){
+      alert("You do not want lower case in your password.");
+  //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
+  } else if(lower === "" || /(^yes|no)$/i.test(lower)){
+      alert("Invalid, enter yes or no");
+      wantLower();
   }
+        
+}
 
 
 
-
-//need to make generatePassword function (need to define it)
-function generatePassword(){
+//need to make generateRandomPassword function to chose random characters/numbers based of the users input from above
+function generateRandomPassword(){
+  
+}
 
   
 
