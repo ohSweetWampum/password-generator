@@ -2,14 +2,15 @@
 
 
 
-var allCharactersLettersNumbers = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~","0","1","2","3","4","5","6","7","8","9"];
-
-
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+var specialCharacters = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 var minLength = 8;
 var maxLength = 128;
 var yes = "yes";
 var no = "no";
-
+var usersCriteriaCharacterArray = [];
 
 
 
@@ -45,6 +46,7 @@ function wantLower(){
   var lower = prompt("Do you want lower case letters included in the password?");
   if(lower.toLowerCase() === yes){
     alert("You selected " + lower + " to included lower case.");
+    usersCriteriaCharacterArray = [usersCriteriaCharacterArray.concat()]
   }else if(lower.toLowerCase() === no){
     alert("You do not want lower case in your password.");
   } else {
