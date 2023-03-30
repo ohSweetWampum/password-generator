@@ -24,10 +24,10 @@ function determineLength(){
       determineLength();
     }
 }
-  
+
 // asking user if they want lower case letters
 function wantLower(){
-  var lower = prompt("Do you want lower case letters included in the password?");
+  var lower = prompt("Do you want lower case letters included in the password, yes or no?");
   if(lower.toLowerCase() === yes){
     alert("You selected " + lower + " to included lower case.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowerCase);
@@ -41,7 +41,7 @@ function wantLower(){
  
 // asking user if they want upper case letters
 function wantUpper(){
-  var upper = prompt("Do you want upper case letters included in the password?");
+  var upper = prompt("Do you want upper case letters included in the password, yes or no?");
   if(upper.toLowerCase() === yes){
     alert("You selected " + upper + " to included upper case.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(upperCase);
@@ -55,7 +55,7 @@ function wantUpper(){
 
 // asking user if they want special characters
 function wantSpecialCharacters(){
-  var specialCharacters = prompt("Do you want special characters included in the password?");
+  var specialCharacters = prompt("Do you want special characters included in the password, yes or no?");
   if(specialCharacters.toLowerCase() === yes){
     alert("You selected " + specialCharacters + " to included special characters.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(specialCharactersList);
@@ -67,6 +67,18 @@ function wantSpecialCharacters(){
   }
 }
         
+function wantNumbers(){
+  var number = prompt("Do you want numbers included in the password, yes or no?");
+  if(number.toLowerCase() === yes){
+    alert("You selected " + number + " to including numbers.");
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(numbers);
+  }else if(number.toLowerCase() === no){
+    alert("You do not want numbers in your password.");
+  } else {
+    alert("Invalid option , enter yes or no");
+    wantNumbers();
+  }
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -88,6 +100,7 @@ determineLength();
 wantLower();
 wantUpper();
 wantSpecialCharacters();
+wantNumbers();
 var password = generateRandomPassword();
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
