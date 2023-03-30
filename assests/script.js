@@ -22,10 +22,12 @@ var minLength = 8;
 var maxLength = 128;
 var yes = "yes";
 var no = "no";
-//Need to creat functions that prompt the user to enter info do things base of input
 
 
-Function entireProcess(){
+
+Function entirePasswordGenProcess(){
+
+
 // asking user to enter character length between 8-128, they will be returned to function determineLength if they go outsude 8-128 or enter invalid character such as %.
 function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
@@ -51,7 +53,6 @@ function wantLower(){
     alert("You selected " + lower + " to included lower case.");
   }else if(lower.toLowerCase() === no){
     alert("You do not want lower case in your password.");
-    //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
   } else {
     alert("Invalid option , enter yes or no");
     wantLower();
@@ -60,80 +61,35 @@ function wantLower(){
  
   
     
-    // asking user if they want upper case letters
-function wantLower(){
-  var lower = prompt("Do you want lower case letters included in the password?");
-  if(lower.toLowerCase() === yes){
-    alert("You selected " + lower + " to included lower case.");
-  }else if(lower.toLowerCase() === no){
-    alert("You do not want lower case in your password.");
-  //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
-  } else if(lower === "" || /(^yes|no)$/i.test(lower)){
-    alert("Invalid, enter yes or no");
-    wantLower();cd
+// asking user if they want upper case letters
+function wantUpper(){
+  var upper = prompt("Do you want upper case letters included in the password?");
+  if(upper.toLowerCase() === yes){
+    alert("You selected " + upper + " to included lower case.");
+  }else if(upper.toLowerCase() === no){
+    alert("You do not want upper case in your password.");
+  } else {
+    alert("Invalid option , enter yes or no");
+    wantUpper();
   }
-      
+}
 
 
-      // asking user if they want special characters
-function wantLower(){
-  var lower = prompt("Do you want lower case letters included in the password?");
-  if(lower.toLowerCase() === yes){
-      alert("You selected " + lower + " to included lower case.");
-  }else if(lower.toLowerCase() === no){
-      alert("You do not want lower case in your password.");
-  //If the user enters something other than yes or no, this code will let them know that is invalid. It is saying if the user enters nothing("") or if the user enters characters/words other than yes or no (/(^yes|no)$/i.test(lower))
-  } else if(lower === "" || /(^yes|no)$/i.test(lower)){
-      alert("Invalid, enter yes or no");
-      wantLower();
+// asking user if they want special characters
+function wantSpecialCharacters(){
+  var specialCharacters = prompt("Do you want special characters included in the password?");
+  if(specialCharacters.toLowerCase() === yes){
+    alert("You selected " + specialCharacters + " to included lower case.");
+  }else if(specialCharacters.toLowerCase() === no){
+    alert("You do not want any special characters in your password.");
+  } else {
+    alert("Invalid option , enter yes or no");
+    wantSpecialCharacters();
   }
+}
         
 }
 
-
-
-//need to make generateRandomPassword function to chose random characters/numbers based of the users input from above
-function generateRandomPassword(){
-  
-}
-
-  
-
-
-
-
-
-
-
-// // uppercase prompt
-var upper = prompt("Do you want uppercase letters in your password, yes or no?");
-alert("You entered " + upper)
-var upperConfirmation = confirm("You said " + upper + " to having uppercase letters, is this correct?");
-if (upperConfirmation){
-  alert(upper + " there will be uppercase letters in your password!")
-}else{
-  alert("Looks like you are not sure, please enter yes or no if you want uppercase letters in your password.")
-}
-
-// // lowercase prompt
-var lower = prompt("Do you want lowercase letters in your password, yes or no?");
-alert("You entered " + lower)
-var lowerConfirmation = confirm("You said " + lower + " to having lowercase letters, is this correct?");
-if (lowerConfirmation){
-  alert(lower + " there will be lowercase letters in your password!")
-}else{
-  alert("Looks like you are not sure, please enter yes or no if you want lowercase letters in your password.")
-}
-
-// // special characters prompt
-var specialChar = prompt("Do you want special characters in your password, yes or no?");
-alert("You entered " + specialChar)
-var specialCharConfirmation = confirm("You said " + specialChar + " to having special characters, is this correct?");
-if (specialCharConfirmation){
-  alert(specialChar + " there will be special characters in your password!")
-}else{
-  alert("Looks like you are not sure, please enter yes or no if you want special characters in your password.")
-}
 
 
 
