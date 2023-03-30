@@ -18,12 +18,13 @@ var no = "no";
 // asking user to enter character length between 8-128, they will be returned to function determineLength if they go outsude 8-128 or enter invalid character such as %.
 
 //created this  entireProcess function as the other functions were not getting called, figure I'd just make a function to call the other functions
-function entireProcess(){
-  determineLength();
-  wantLower();
-  wantSpecialCharacters();
-  wantUpper();
-}
+// function entireProcess(){
+//   determineLength();
+//   wantLower();
+//   wantSpecialCharacters();
+//   wantUpper();
+// }
+
 
 function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
@@ -90,7 +91,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
-// this section takes into account what the user selected for the criteria
+// this section takes into account what the user selected for the criteria and re-makes the arrays
 function generateRandomPassword() {
   var userSelections = [];
   if (wantLower() === yes){ 
@@ -106,11 +107,6 @@ function generateRandomPassword() {
 
   }
 
-
-
-
-
-
   var password = "";
   for(var i = 0; i < length; i++){
     var randomCharactersGenerator = allCharactersLettersNumbers [Math.floor(Math.random() * allCharactersLettersNumbers.length)];
@@ -118,8 +114,17 @@ function generateRandomPassword() {
 
   }
 
-  
+  return password;
 
+}
+
+//to store users inputs
+function writePass(){
+  var length = determineLength();
+  var wantLower = wantLower() === "yes";
+  var wantUpper = wantUpper() === "yes";
+  var wantSpecialCharacters = wantSpecialCharacters() === "yes";
+}
 
 
 
