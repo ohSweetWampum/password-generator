@@ -16,7 +16,7 @@ function determineLength(){
     alert("You selected " + length + " characters long.");
     passwordLength = parseInt(length, 10);
   }else if(length < minLength || length > maxLength){ 
-    alert(" Looks like you choose a number outside our range of 8-128 ");
+    alert(" Looks like you chose a number outside the range of 8-128, please select a number inside this range. ");
       determineLength();
     }
     else {
@@ -29,10 +29,10 @@ function determineLength(){
 function wantLower(){
   var lower = prompt("Do you want lower case letters included in the password, yes or no?");
   if(lower.toLowerCase() === yes){
-    alert("You selected " + lower + " to included lower case.");
+    alert("You selected " + lower + " to including lower case.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowerCase);
   }else if(lower.toLowerCase() === no){
-    alert("You do not want lower case in your password.");
+    alert("You do not want lower case letters in your password.");
   } else {
     alert("Invalid option , enter yes or no");
     wantLower();
@@ -43,7 +43,7 @@ function wantLower(){
 function wantUpper(){
   var upper = prompt("Do you want upper case letters included in the password, yes or no?");
   if(upper.toLowerCase() === yes){
-    alert("You selected " + upper + " to included upper case.");
+    alert("You selected " + upper + " to including upper case.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(upperCase);
   }else if(upper.toLowerCase() === no){
     alert("You do not want upper case in your password.");
@@ -57,7 +57,7 @@ function wantUpper(){
 function wantSpecialCharacters(){
   var specialCharacters = prompt("Do you want special characters included in the password, yes or no?");
   if(specialCharacters.toLowerCase() === yes){
-    alert("You selected " + specialCharacters + " to included special characters.");
+    alert("You selected " + specialCharacters + " to including special characters.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(specialCharactersList);
   }else if(specialCharacters.toLowerCase() === no){
     alert("You do not want any special characters in your password.");
