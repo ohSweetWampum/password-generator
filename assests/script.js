@@ -90,11 +90,35 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
+// this section takes into account what the user selected for the criteria
 function generateRandomPassword() {
-  var password = "";
-  for(var i = 0; i ,)
+  var userSelections = [];
+  if (wantLower() === yes){ 
+    userSelections = userSelections.concat(allCharactersLettersNumbers);
 
-  var randomCharactersGenerator = allCharactersLettersNumbers [Math.floor(Math.random() * allCharactersLettersNumbers.length)];
+  }
+  if (wantUpper() === yes){ 
+    userSelections = userSelections.concat(allCharactersLettersNumbers);
+
+  }
+  if (wantSpecialCharacters() === yes){ 
+    userSelections = userSelections.concat(allCharactersLettersNumbers);
+
+  }
+
+
+
+
+
+
+  var password = "";
+  for(var i = 0; i < length; i++){
+    var randomCharactersGenerator = allCharactersLettersNumbers [Math.floor(Math.random() * allCharactersLettersNumbers.length)];
+    password += randomCharactersGenerator;
+
+  }
+
+  
 
 
 
