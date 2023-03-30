@@ -1,23 +1,18 @@
 
-// // //psuedocode
-// // How do I validate that the user is choosing between 8 and 128 characters? What happens when they choose outside this range?
-// 1. prompt the user for length of 8 to 128, ask if the want special , lower or upper. --->  prompt window method, etc, if they say no(cancel) to all then say "you must select at leats one type of character", send them to the beginning
-// 2. validate the input, make sure its 8-128 , at least 1 character type should be entered---> make array of characters, if else for 8-128,
-//3. generate password based of of entered criteria
-// 4.display the generated password on the page
 
 
 
+var allCharactersLettersNumbers = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~","0","1","2","3","4","5","6","7","8","9"];
 
 
 
 
 // // setting all my global variables
-var alphabetUpperList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var alphabetLowerList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var numericalCharactersList = ["0","1","2","3","4","5","6","7","8","9",];
-//Have to add a backslash "\ to the 2 and 24th items of this array, something about escape character?
-var specialCharactersList = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
+// var alphabetUpperList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// var alphabetLowerList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var numericalCharactersList = ["0","1","2","3","4","5","6","7","8","9",];
+// //Have to add a backslash "\ to the 2 and 24th items of this array, something about escape character?
+// var specialCharactersList = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 var minLength = 8;
 var maxLength = 128;
 var yes = "yes";
@@ -25,10 +20,19 @@ var no = "no";
 
 
 
-Function entirePasswordGenProcess(){
+
 
 
 // asking user to enter character length between 8-128, they will be returned to function determineLength if they go outsude 8-128 or enter invalid character such as %.
+
+//created this  entireProcess function as the other functions were not getting called, figure I'd just make a function to call the other functions
+function entireProcess(){
+  determineLength();
+  wantLower();
+  wantSpecialCharacters();
+  wantUpper();
+}
+
 function determineLength(){
   var length = prompt("How many characters long do you want your password to be? Number must be between 8-128.");
   if(length >= minLength && length <= maxLength){
@@ -41,12 +45,9 @@ function determineLength(){
       alert("You have entered an invalid option, please enter again." );
       determineLength();
     }
-    }
+}
   
-  
-
 // asking user if they want lower case letters
-            
 function wantLower(){
   var lower = prompt("Do you want lower case letters included in the password?");
   if(lower.toLowerCase() === yes){
@@ -59,8 +60,6 @@ function wantLower(){
   }
 }
  
-  
-    
 // asking user if they want upper case letters
 function wantUpper(){
   var upper = prompt("Do you want upper case letters included in the password?");
@@ -73,7 +72,6 @@ function wantUpper(){
     wantUpper();
   }
 }
-
 
 // asking user if they want special characters
 function wantSpecialCharacters(){
@@ -88,9 +86,6 @@ function wantSpecialCharacters(){
   }
 }
         
-}
-
-
 
 
 
@@ -103,13 +98,26 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function generateRandomPassword() {
+  var password = "";
+  for(var i = 0; i ,)
+
+  var randomCharactersGenerator = allCharactersLettersNumbers [Math.floor(Math.random() * allCharactersLettersNumbers.length)];
+
+
+
+
+
+
   var passwordText = document.querySelector("#password");
 
+
   passwordText.value = password;
-  ;
-}
+  
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
