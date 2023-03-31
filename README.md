@@ -35,6 +35,13 @@ A password generator that can generate random passwords based on criteria that t
 
 ## Learning Points
 
+- Learned how to use functions in conjuction with else if statements, prompts, alerts
+- Learned the importance of ensuring functions are actually called and not just defined
+- Learned how to use empty variables to store user data that has been input
+- Learned how to generate a random index
+- Learned how to concatenate arrays
+- Learned how to user a for loop to iterate a desired number of times
+
 ## Author Info
 
 Matthew Gibson
@@ -45,32 +52,17 @@ Matthew Gibson
 
 ## Credits
 
-[w3schools.com](https://www.w3schools.com/css/css_selectors.asp)
+[meyerweb.com](https://meyerweb.com/eric/tools/css/reset/)
+(For my reset.css file)
 
-[w3schools.com](https://www.w3schools.com/html/html5_semantic_elements.asp)
+[w3schools.com](https://www.w3schools.com/js/js_array_methods.asp)
+(array methods)
+
+[w3schools.com](https://www.w3schools.com/js/js_if_else.asp)
+(else if statements)
 
 ## License
 
-MIT License
-
-Copyright (c) [2023] [ohSweetWampum]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---

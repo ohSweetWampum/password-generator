@@ -99,6 +99,8 @@ function intiateEntireProcess(){
   wantNumbers();
 }
 
+
+
 //Function that generates a random password based off the user criteria that they chose. Then it sends the value to the HTML element where id= password is in, displaying it on the screen.
 function generateRandomPassword() {
   var password = "";
