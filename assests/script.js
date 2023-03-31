@@ -36,28 +36,28 @@ function determineLength(){
 
 // Function that asks the user if they want lowercase letters in their password, it validates the input to ensure either "yes" or "no" are selected
 function wantLower(){
-  var lower = prompt("Do you want lower case letters included in the password, yes or no?");
+  var lower = prompt("Do you want lowercase letters included in the password, yes or no?");
   if(lower.toLowerCase() === yes){
-    alert("You selected " + lower + " to including lower case.");
+    alert("You selected " + lower + " to including lowercase.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowerCase);
   } else if(lower.toLowerCase() === no){
-    alert("You do not want lower case letters in your password.");
+    alert("You do not want lower ase letters in your password.");
   } else {
-    alert("Invalid option , enter yes or no");
+    alert("Invalid option , enter 'yes' or 'no'");
     wantLower();
   }
 }
  
 // Function that asks the user if they want uppercase letters in their password, it validates the input to ensure either "yes" or "no" are selected
 function wantUpper(){
-  var upper = prompt("Do you want upper case letters included in the password, yes or no?");
+  var upper = prompt("Do you want uppercase letters included in the password, yes or no?");
   if(upper.toLowerCase() === yes){
-    alert("You selected " + upper + " to including upper case.");
+    alert("You selected " + upper + " to including uppercase.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(upperCase);
   } else if(upper.toLowerCase() === no){
-    alert("You do not want upper case in your password.");
+    alert("You do not want uppercase in your password.");
   } else {
-    alert("Invalid option , enter yes or no");
+    alert("Invalid option , enter 'yes' or 'no'");
     wantUpper();
   }
 }
@@ -71,7 +71,7 @@ function wantSpecialCharacters(){
   } else if(specialCharacters.toLowerCase() === no){
     alert("You do not want any special characters in your password.");
   } else {
-    alert("Invalid option , enter yes or no");
+    alert("Invalid option , enter 'yes' or 'no'");
     wantSpecialCharacters();
   }
 }
@@ -85,7 +85,7 @@ function wantNumbers(){
   } else if(number.toLowerCase() === no){
     alert("You do not want numbers in your password.");
   } else {
-    alert("Invalid option , enter yes or no");
+    alert("Invalid option , enter 'yes' or 'no'");
     wantNumbers();
   }
 }
