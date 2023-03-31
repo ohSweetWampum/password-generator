@@ -13,7 +13,7 @@ This program asks the user how long they want their password to be (min 8 - max 
 ## Technology Used
 
 - JavaScript
-  [Learn about Git](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  [Learn about JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 - HTML
   [Learn about HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
