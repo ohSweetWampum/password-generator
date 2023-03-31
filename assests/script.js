@@ -1,10 +1,9 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-
 //Global arrays
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var specialCharactersList = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 
@@ -17,7 +16,6 @@ var no = "no";
 //Initializing Empty Gloabal Arrays which will be used to store user selections
 var usersCriteriaCharacterArray = [];
 var passwordLength = "";
-
 
 //Function that asks user for desired character length and validates it to ensure it is between 8-128
 function determineLength(){
@@ -39,13 +37,14 @@ function wantLower(){
   var lower = prompt("Do you want lowercase letters included in the password, yes or no?");
   if(lower.toLowerCase() === yes){
     alert("You selected " + lower + " to including lowercase.");
-    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowerCase);
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(lowercase);
   } else if(lower.toLowerCase() === no){
-    alert("You do not want lower ase letters in your password.");
+    alert("You do not want lower case letters in your password.");
   } else {
     alert("Invalid option , enter 'yes' or 'no'");
     wantLower();
   }
+ 
 }
  
 // Function that asks the user if they want uppercase letters in their password, it validates the input to ensure either "yes" or "no" are selected
@@ -53,7 +52,7 @@ function wantUpper(){
   var upper = prompt("Do you want uppercase letters included in the password, yes or no?");
   if(upper.toLowerCase() === yes){
     alert("You selected " + upper + " to including uppercase.");
-    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(upperCase);
+    usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(uppercase);
   } else if(upper.toLowerCase() === no){
     alert("You do not want uppercase in your password.");
   } else {
@@ -68,6 +67,7 @@ function wantSpecialCharacters(){
   if(specialCharacters.toLowerCase() === yes){
     alert("You selected " + specialCharacters + " to including special characters.");
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(specialCharactersList);
+    
   } else if(specialCharacters.toLowerCase() === no){
     alert("You do not want any special characters in your password.");
   } else {
@@ -84,6 +84,9 @@ function wantNumbers(){
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(numbers);
   } else if(number.toLowerCase() === no){
     alert("You do not want numbers in your password.");
+    // If the user has not slected a character by now, they will be returned to the wantLower function to start over
+    alert("You need to select at least 1 character type");
+    wantLower();
   } else {
     alert("Invalid option , enter 'yes' or 'no'");
     wantNumbers();
@@ -96,10 +99,9 @@ function intiateEntireProcess(){
   wantLower();
   wantUpper();
   wantSpecialCharacters();
-  wantNumbers();
+  wantNumbers()
+
 }
-
-
 
 //Function that generates a random password based off the user criteria that they chose. Then it sends the value to the HTML element where id= password is in, displaying it on the screen.
 function generateRandomPassword() {
