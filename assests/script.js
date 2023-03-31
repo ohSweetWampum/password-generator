@@ -106,15 +106,19 @@ function generateRandomPassword() {
     var randomCharactersGenerator = Math.floor(Math.random() * usersCriteriaCharacterArray.length);
     var selectRandomCharacterFromArray = usersCriteriaCharacterArray[randomCharactersGenerator];
     password += selectRandomCharacterFromArray;
-    var password = generateRandomPassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-  }
+    }
   return password;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", printOutPassword);
+//Adding a function to display the password
+function displayThePasswordToUser(){
+  intiateEntireProcess();
+  var password = generateRandomPassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", displayThePasswordToUser);
 
 

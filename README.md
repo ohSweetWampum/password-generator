@@ -8,8 +8,6 @@ A password generator that can generate random passwords based on criteria that t
 
 ## Description
 
-Code refactoring is the process of restructuring exsisting code to improve it's structure in a way that does not change it's original functionality. Horiseon wanted their code to be more accessible so that people with disabilities can navigate the website, and so the page will rank higher in search engines. Horieson aslo wanted the code consolidated, but did not want the webpage behavior to change. For all these reasons, it was decided that I should refactor it.
-
 ## Technology Used
 
 - JavaScript
