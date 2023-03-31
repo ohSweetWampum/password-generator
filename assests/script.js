@@ -84,23 +84,28 @@ function wantNumbers(){
     usersCriteriaCharacterArray = usersCriteriaCharacterArray.concat(numbers);
   } else if(number.toLowerCase() === no){
     alert("You do not want numbers in your password.");
-    // If the user has not slected a character by now, they will be returned to the wantLower function to start over
-    alert("You need to select at least 1 character type");
-    wantLower();
+  
   } else {
     alert("Invalid option , enter 'yes' or 'no'");
     wantNumbers();
   }
 }
 
-// Function that starts the entire process in correct order
-function intiateEntireProcess(){
-  determineLength();
-  wantLower();
-  wantUpper();
-  wantSpecialCharacters();
-  wantNumbers()
 
+// Function that starts the entire process in correct order, empties out the global array if user is running a 2nd time, used while loop to ensure that the user selcts at least 1 character type before the program generates the password.
+function intiateEntireProcess(){
+  usersCriteriaCharacterArray = [];
+  determineLength();
+  while (usersCriteriaCharacterArray.length === 0){
+    wantLower();
+    wantUpper();
+    wantSpecialCharacters();
+    wantNumbers();
+    if (usersCriteriaCharacterArray.length === 0) {
+    alert("You must select at least 1 character type");
+
+}
+}
 }
 
 //Function that generates a random password based off the user criteria that they chose. Then it sends the value to the HTML element where id= password is in, displaying it on the screen.
